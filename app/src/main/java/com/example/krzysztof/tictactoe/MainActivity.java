@@ -5,7 +5,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
+    List<Button> buttons = new ArrayList<>();
     Button a1,a2,a3,b1,b2,b3,c1,c2,c3;
     int player =1;
     View view;
@@ -14,11 +18,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Init();
-//        while (true){
-//            click(view);
-//
-//        }
-        click(this.view);
+
+        setPlayerSign(a1);
+        setPlayerSign(a2);
+        setPlayerSign(a3);
+        setPlayerSign(b1);
+        setPlayerSign(b2);
+        setPlayerSign(b3);
+        setPlayerSign(c1);
+        setPlayerSign(c2);
+        setPlayerSign(c3);
+
+
     }
     void changePlayer(){
         if(player==1)
@@ -79,20 +90,20 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    void setPlayerSign(Button button ){
+    void setPlayerSign(final Button button ){
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(button.getText().equals(""))
                 if(player==1){
-                    a1.setText("O");
+                    button.setText("O");
                     changePlayer();
                 }else if (player==2){
-                    a1.setText("X");
+                    button.setText("X");
                     changePlayer();
                 }
             }
         });
-
     }
 
 
