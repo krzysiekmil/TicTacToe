@@ -38,15 +38,15 @@ public class MainActivity extends AppCompatActivity {
             player=1;
     }
     void Init(){
-        a1=(Button)findViewById(R.id.a1);
-        a2=(Button)findViewById(R.id.a2);
-        a3=(Button)findViewById(R.id.a3);
-        b1=(Button)findViewById(R.id.b1);
-        b2=(Button)findViewById(R.id.b2);
-        b3=(Button)findViewById(R.id.b3);
-        c1=(Button)findViewById(R.id.c1);
-        c2=(Button)findViewById(R.id.c2);
-        c3=(Button)findViewById(R.id.c3);
+        a1= findViewById(R.id.a1);
+        a2= findViewById(R.id.a2);
+        a3= findViewById(R.id.a3);
+        b1= findViewById(R.id.b1);
+        b2= findViewById(R.id.b2);
+        b3= findViewById(R.id.b3);
+        c1= findViewById(R.id.c1);
+        c2= findViewById(R.id.c2);
+        c3= findViewById(R.id.c3);
         this.view=this.findViewById(android.R.id.content);
     }
     void click(View view){
@@ -99,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
                     button.setText("O");
                     changePlayer();
                 }else if (player==2){
+                    System.out.println("Test");
                     button.setText("X");
                     changePlayer();
                 }
